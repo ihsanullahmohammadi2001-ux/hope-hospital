@@ -1,59 +1,252 @@
 
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ps" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#075b66">
-<title>Hope Hospital</title>
+<meta name="theme-color" content="#087f8c">
+<title>Hope Hospital | د امید روغتون</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f4f8fa;color:#263746;line-height:1.6}
-header{background:#075b66;color:white;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-.logo{font-size:24px;font-weight:bold}
-nav{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-weight:bold}
-nav a:hover{color:#a8e9e9}
-select,input,textarea,button{font:inherit}
-.lang{padding:8px;border-radius:6px;border:0}
-.hero{background:linear-gradient(120deg,#087f8c,#075b66);color:white;text-align:center;padding:85px 20px}
-.hero h1{font-size:38px;margin-bottom:15px}
-.hero p{font-size:18px;max-width:700px;margin:auto}
-.btn{display:inline-block;background:#0da5a5;color:white;padding:12px 22px;border-radius:7px;text-decoration:none;border:0;cursor:pointer;margin-top:15px}
-.section{padding:55px 6%;scroll-margin-top:15px}
-.heading{text-align:center;margin-bottom:30px}
-.heading h2{font-size:30px;color:#075b66}
-.heading p{color:#71818a}
-.about{max-width:850px;margin:auto;text-align:center}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card,.doctor-card{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 14px #0001}
-.card h3,.doctor-card h3{color:#087f8c;margin-bottom:10px}
-.card p,.doctor-card p{color:#647984;margin:7px 0;overflow-wrap:anywhere}
-.doctor-card img{width:100%;height:220px;object-fit:cover;border-radius:9px;background:#eaf0f2}
-form{max-width:650px;margin:auto;background:white;padding:25px;border-radius:12px;box-shadow:0 3px 14px #0001}
-input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #cbd7db;border-radius:7px;background:white}
-textarea{min-height:90px}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --primary:#07858e;
+ --dark:#075b66;
+ --light:#eaf7f7;
+ --text:#263b45;
+ --muted:#71818b;
+ --border:#e5edef;
+ --shadow:0 8px 30px rgba(25,70,80,.08);
+}
+html{scroll-behavior:smooth}
+body{
+ font-family:Arial,Tahoma,sans-serif;
+ color:var(--text);
+ background:#fff;
+ line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-form button,.action{background:#087f8c;color:white;padding:11px 18px;border:0;border-radius:7px;margin-top:10px}
-button:disabled{opacity:.6;cursor:not-allowed}
-.danger{background:#c0392b!important}
-.reset-btn{background:#647984!important}
-.status{margin-top:10px;color:#087f8c;font-weight:bold;overflow-wrap:anywhere}
-#admin{background:#eaf2f4}
-.admin-box{max-width:1000px;margin:auto}
-.admin-panel{display:none;background:white;padding:22px;border-radius:12px;margin-top:20px}
-.admin-panel h2,.admin-panel h3{color:#075b66;margin:15px 0}
-.admin-panel hr{margin:25px 0;border:0;border-top:1px solid #ddd}
-.patient,.admin-doctor{padding:15px;border:1px solid #dce5e8;border-radius:8px;margin:12px 0;background:white;overflow-wrap:anywhere}
-.search{max-width:100%}
-footer{background:#064b55;color:white;text-align:center;padding:25px}
+header{
+ position:sticky;top:0;z-index:50;
+ background:rgba(255,255,255,.97);
+ backdrop-filter:blur(12px);
+ box-shadow:0 2px 18px #0000000b;
+ padding:13px 6%;
+ display:flex;align-items:center;
+ justify-content:space-between;gap:15px;
+ flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{
+ width:45px;height:45px;border-radius:14px;
+ background:var(--primary);color:white;
+ display:grid;place-items:center;
+ font-size:30px;font-weight:bold;
+}
+.brand h2{color:var(--dark);font-size:21px}
+nav{display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+nav a{font-size:14px;color:#435965;font-weight:600}
+nav a:hover{color:var(--primary)}
+select,input,textarea{
+ border:1px solid var(--border);
+ border-radius:10px;padding:12px;
+ background:white;color:var(--text);
+ outline:none;width:100%;
+}
+select:focus,input:focus,textarea:focus{
+ border-color:var(--primary);
+ box-shadow:0 0 0 3px #07858e18;
+}
+#language{width:auto;padding:9px}
+.hero{
+ background:linear-gradient(120deg,#effafa,#f7fbfc);
+ padding:65px 7%;
+ display:grid;grid-template-columns:1fr 1fr;
+ align-items:center;gap:40px;
+}
+.hero-content{max-width:600px}
+.eyebrow{color:var(--primary);font-weight:bold;margin-bottom:12px}
+.hero h1{
+ font-size:clamp(30px,4vw,48px);
+ line-height:1.3;color:var(--dark);margin-bottom:18px;
+}
+.hero p{color:var(--muted);font-size:16px;line-height:2}
+.hero img{
+ width:100%;height:350px;object-fit:cover;
+ border-radius:25px;box-shadow:var(--shadow);
+}
+.btn,button{
+ border:0;border-radius:10px;
+ background:var(--primary);color:white;
+ padding:12px 20px;font-weight:bold;
+ display:inline-block;transition:.2s;
+}
+.btn:hover,button:hover{background:var(--dark);transform:translateY(-1px)}
+button:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.hero .btn{margin-top:23px}
+.section{padding:65px 7%}
+.heading{text-align:center;margin:0 auto 35px;max-width:700px}
+.heading h2{font-size:29px;color:var(--dark);margin-bottom:9px}
+.heading p{color:var(--muted)}
+.about-box{
+ max-width:900px;margin:auto;text-align:center;
+ padding:30px;border:1px solid var(--border);
+ border-radius:18px;background:#fff;box-shadow:var(--shadow);
+}
+.about-box p{color:var(--muted)}
+.departments{background:#f8fbfc}
+.cards{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:20px;
+}
+.card{
+ background:white;border:1px solid var(--border);
+ border-radius:17px;overflow:hidden;
+ box-shadow:var(--shadow);transition:.25s;
+}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:175px;object-fit:cover;display:block}
+.card-content{padding:19px}
+.card h3{color:var(--dark);font-size:18px;margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted);min-height:52px}
+.card .btn{margin-top:13px;font-size:13px;padding:9px 14px}
+
+/* Public doctor section */
+.public-doctor-groups{display:grid;gap:32px}
+.public-doctor-group{
+ background:#f8fbfc;
+ border:1px solid var(--border);
+ border-radius:18px;padding:22px;
+}
+.public-doctor-group h3{
+ color:var(--dark);font-size:21px;
+ margin-bottom:17px;
+ border-right:4px solid var(--primary);
+ padding-right:12px;
+}
+.public-doctor-cards{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:18px;
+}
+.public-doctor-card{
+ background:white;border:1px solid var(--border);
+ border-radius:16px;padding:19px;
+ box-shadow:var(--shadow);text-align:center;
+ overflow-wrap:anywhere;
+}
+.public-doctor-card img{
+ width:115px;height:115px;
+ object-fit:cover;border-radius:50%;
+ border:4px solid var(--light);
+ margin:0 auto 12px;display:block;
+}
+.public-doctor-card h4{color:var(--dark);font-size:18px;margin-bottom:7px}
+.public-doctor-card p{font-size:14px;color:var(--muted);margin:5px 0}
+.public-doctor-card .call-doctor{
+ display:inline-block;background:var(--light);
+ color:var(--dark);padding:7px 13px;
+ border-radius:8px;margin-top:10px;font-weight:bold;
+}
+.no-doctors{
+ background:white;border:1px dashed var(--border);
+ border-radius:12px;padding:17px;color:var(--muted);
+ text-align:center;
+}
+.features{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:18px;margin-top:25px;
+}
+.feature{
+ border:1px solid var(--border);border-radius:15px;
+ padding:22px;background:white;text-align:center;
+}
+.feature .symbol{font-size:30px}
+.feature h3{color:var(--dark);margin:8px 0}
+.feature p{font-size:14px;color:var(--muted)}
+.appointment{
+ max-width:680px;margin:auto;padding:28px;
+ border:1px solid var(--border);border-radius:18px;
+ box-shadow:var(--shadow);background:#fff;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:14px;font-weight:bold;margin-bottom:6px}
+.appointment textarea{min-height:100px;resize:vertical}
+.appointment button{width:100%;margin-top:5px}
+.status{margin-top:12px;color:var(--primary);font-weight:bold;overflow-wrap:anywhere}
+.contact{background:#eff8f9}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.contact-item{
+ background:#fff;padding:20px;border-radius:14px;
+ border:1px solid var(--border);
+}
+.contact-item h3{color:var(--dark);margin-bottom:5px}
+.contact-item p{overflow-wrap:anywhere}
+.contact-item a{color:var(--primary)}
+.login-section{background:#f8fbfc}
+.login-box{max-width:460px;margin:auto}
+.login-box .appointment{box-shadow:none}
+#adminPanel{background:#f4f8fa}
+#adminPanel[hidden],#adminLogin[hidden]{display:none!important}
+.admin-top{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:25px;
+}
+.admin-top h2{color:var(--dark)}
+.admin-tools{
+ background:#fff;border:1px solid var(--border);
+ border-radius:15px;padding:20px;margin:20px 0;
+}
+.admin-tools h3{color:var(--dark);margin-bottom:14px}
+.admin-tools input,.admin-tools select{margin-bottom:12px}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.patient,.doctor-item{
+ background:white;border:1px solid var(--border);
+ border-radius:14px;padding:18px;margin:13px 0;
+ overflow-wrap:anywhere;
+}
+.patient h3,.doctor-item h3{color:var(--dark);margin-bottom:7px}
+.patient p,.doctor-item p{font-size:14px;color:var(--muted);margin:5px 0}
+.patient button,.doctor-item button{background:#c94b4b;margin-top:10px}
+.doctor-item img{
+ width:90px;height:90px;object-fit:cover;
+ border-radius:12px;margin-bottom:10px;display:block;
+}
+.admin-message{color:var(--primary);font-weight:bold;margin:10px 0;overflow-wrap:anywhere}
+.small-note{font-size:13px;color:var(--muted);margin-top:8px}
+footer{background:#123e4b;color:#d9e8eb;text-align:center;padding:25px;font-size:14px}
+
+@media(max-width:950px){
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .hero{gap:25px}
+}
 @media(max-width:650px){
-header{justify-content:center;text-align:center}
-nav{justify-content:center}
-.hero h1{font-size:29px}
-.section{padding:40px 5%}
+ header{padding:12px 5%}
+ nav{gap:11px}
+ nav a{font-size:13px}
+ .brand h2{font-size:18px}
+ .hero{grid-template-columns:1fr;padding:42px 6%}
+ .hero img{height:230px;grid-row:1}
+ .section{padding:45px 6%}
+ .cards{grid-template-columns:1fr 1fr;gap:12px}
+ .card img{height:125px}
+ .card-content{padding:12px}
+ .card h3{font-size:15px}
+ .card p{font-size:12px}
+ .features,.contact-grid,.admin-grid{grid-template-columns:1fr}
+ .form-grid{grid-template-columns:1fr}
+ .appointment{padding:18px}
+ .heading h2{font-size:24px}
+ .public-doctor-cards{grid-template-columns:1fr 1fr}
+ .public-doctor-group{padding:13px}
+ .public-doctor-card{padding:12px}
+ .public-doctor-card img{width:90px;height:90px}
+}
+@media(max-width:370px){
+ .cards,.public-doctor-cards{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -61,550 +254,870 @@ nav{justify-content:center}
 <body>
 
 <header>
-<div class="logo">✚ Hope Hospital</div>
-<nav>
-<a href="#home" data-t="home">Home</a>
-<a href="#about" data-t="about">About</a>
-<a href="#departments" data-t="departments">Departments</a>
-<a href="#doctors" data-t="doctors">Doctors</a>
-<a href="#appointment" data-t="appointment">Appointment</a>
-<a href="#admin" data-t="admin">Admin</a>
-<select id="language" class="lang">
-<option value="en">English</option>
-<option value="ps">پښتو</option>
-<option value="fa">دری</option>
-</select>
-</nav>
+ <a class="brand" href="#home">
+  <div class="logo">+</div>
+  <h2>Hope Hospital</h2>
+ </a>
+ <nav>
+  <a href="#home" data-t="home">کور</a>
+  <a href="#about" data-t="about">زموږ په اړه</a>
+  <a href="#departments" data-t="departments">طبي څانګې</a>
+  <a href="#publicDoctors" data-t="ourDoctors">ډاکټران</a>
+  <a href="#appointment" data-t="appointment">ملاقات</a>
+  <a href="#contact" data-t="contact">اړیکه</a>
+  <a href="#adminLogin" id="adminNavLink" data-t="admin">ادمین</a>
+  <select id="language" aria-label="Language">
+   <option value="ps">پښتو</option>
+   <option value="fa">دری</option>
+   <option value="en">English</option>
+  </select>
+ </nav>
 </header>
 
+<main>
+
 <section class="hero" id="home">
-<h1 data-t="welcome">Welcome to Hope Hospital</h1>
-<p data-t="hero">Your Health, Our Priority. Professional care for you and your family.</p>
-<a class="btn" href="#appointment" data-t="book">Book Appointment</a>
+ <div class="hero-content">
+  <div class="eyebrow" data-t="welcome">د امید روغتون ته ښه راغلاست</div>
+  <h1 data-t="heroTitle">ستاسو روغتیا، زموږ لومړیتوب دی</h1>
+  <p data-t="heroText">موږ هڅه کوو چې تاسو ته د روغتیا په برخه کې غوره او مسلکي خدمتونه وړاندې کړو.</p>
+  <a href="#appointment" class="btn" data-t="book">د ملاقات وخت واخلئ</a>
+ </div>
+ <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=85" alt="Hospital medical care">
 </section>
 
 <section class="section" id="about">
-<div class="heading"><h2 data-t="aboutTitle">About Our Hospital</h2></div>
-<div class="about"><p data-t="aboutText">Hope Hospital provides professional healthcare and quality medical services for all patients.</p></div>
+ <div class="heading">
+  <h2 data-t="aboutTitle">زموږ په اړه</h2>
+  <p data-t="aboutSubtitle">د امید روغتون؛ د روغتیا او پاملرنې لپاره ستاسو ملګری</p>
+ </div>
+ <div class="about-box">
+  <p data-t="aboutText">د امید روغتون موخه خلکو ته د روغتیايي خدمتونو په اړه اسانه معلومات او د ملاقات د غوښتنې اسانتیا برابرول دي.</p>
+ </div>
+ <div class="features">
+  <div class="feature"><div class="symbol">🩺</div><h3 data-t="f1">مسلکي پاملرنه</h3><p data-t="f1p">د ناروغانو روغتیا ته پاملرنه</p></div>
+  <div class="feature"><div class="symbol">📅</div><h3 data-t="f2">د ملاقات غوښتنه</h3><p data-t="f2p">په اسانۍ د ملاقات غوښتنه وکړئ</p></div>
+  <div class="feature"><div class="symbol">🌐</div><h3 data-t="f3">درې ژبې</h3><p data-t="f3p">پښتو، دري او انګلیسي</p></div>
+ </div>
 </section>
 
-<section class="section" id="departments">
-<div class="heading">
-<h2 data-t="depTitle">Our Departments</h2>
-<p data-t="depText">Medical services for your health</p>
-</div>
-<div class="cards">
-<div class="card"><h3 data-t="general">General Medicine</h3><p data-t="generalText">General medical consultation and treatment.</p></div>
-<div class="card"><h3 data-t="cardiology">Cardiology</h3><p data-t="cardioText">Heart health and cardiac care.</p></div>
-<div class="card"><h3 data-t="pediatrics">Pediatrics</h3><p data-t="pediatricText">Healthcare services for children.</p></div>
-<div class="card"><h3 data-t="orthopedics">Orthopedics</h3><p data-t="orthoText">Bone, joint and muscle care.</p></div>
-</div>
+<section class="section departments" id="departments">
+ <div class="heading">
+  <h2 data-t="deptTitle">زموږ طبي څانګې</h2>
+  <p data-t="deptSubtitle">څلور مهمې طبي څانګې په یوه منظم او ښکلي ځای کې</p>
+ </div>
+ <div class="cards">
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=85" alt="General medicine">
+   <div class="card-content">
+    <h3 data-t="general">عمومي طب</h3>
+    <p data-t="generalText">د عمومي ناروغیو معاینه او روغتیايي مشورې.</p>
+    <a href="#appointment" class="btn deptBtn" data-dept="General Medicine" data-t="bookNow">ملاقات وغواړئ</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=700&q=85" alt="Cardiology">
+   <div class="card-content">
+    <h3 data-t="cardiology">د زړه څانګه</h3>
+    <p data-t="cardiologyText">د زړه او وینې د رګونو روغتیايي پاملرنه.</p>
+    <a href="#appointment" class="btn deptBtn" data-dept="Cardiology" data-t="bookNow">ملاقات وغواړئ</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=700&q=85" alt="Pediatrics">
+   <div class="card-content">
+    <h3 data-t="pediatrics">د ماشومانو څانګه</h3>
+    <p data-t="pediatricsText">د ماشومانو روغتیا او طبي معاینات.</p>
+    <a href="#appointment" class="btn deptBtn" data-dept="Pediatrics" data-t="bookNow">ملاقات وغواړئ</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=85" alt="Orthopedics">
+   <div class="card-content">
+    <h3 data-t="orthopedics">د هډوکو څانګه</h3>
+    <p data-t="orthopedicsText">د هډوکو، بندونو او عضلاتو پاملرنه.</p>
+    <a href="#appointment" class="btn deptBtn" data-dept="Orthopedics" data-t="bookNow">ملاقات وغواړئ</a>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section class="section" id="doctors">
-<div class="heading">
-<h2 data-t="teamTitle">Our Medical Team</h2>
-<p data-t="teamText">Meet our professional doctors</p>
-</div>
-<div class="cards" id="publicDoctors"><p>Loading doctors...</p></div>
+<!-- Public doctors: everyone can see this section -->
+<section class="section" id="publicDoctors">
+ <div class="heading">
+  <h2 data-t="ourDoctors">زموږ ډاکټران</h2>
+  <p data-t="ourDoctorsText">زموږ د طبي څانګو مسلکي ډاکټران</p>
+ </div>
+ <div id="publicDoctorList">
+  <p class="status" data-t="loadingDoctors">د ډاکټرانو معلومات لوډ کېږي...</p>
+ </div>
 </section>
 
 <section class="section" id="appointment">
-<div class="heading">
-<h2 data-t="appointmentTitle">Book an Appointment</h2>
-<p data-t="appointmentText">Please complete the form below</p>
-</div>
-<form id="appointmentForm">
-<input id="patientName" maxlength="100" placeholder="Full Name" required>
-<input id="patientPhone" type="tel" maxlength="30" placeholder="Phone Number" required>
-<label for="patientDate" data-t="date">Appointment Date</label>
-<input id="patientDate" type="date" required>
-<select id="patientDepartment" required>
-<option value="" data-t="chooseDep">Select Department</option>
-<option value="General Medicine">General Medicine</option>
-<option value="Cardiology">Cardiology</option>
-<option value="Pediatrics">Pediatrics</option>
-<option value="Orthopedics">Orthopedics</option>
-</select>
-<textarea id="patientMessage" maxlength="500" placeholder="Message (optional)"></textarea>
-<button id="appointmentSubmit" type="submit" data-t="submit">Submit Appointment</button>
-<p id="appointmentStatus" class="status"></p>
-</form>
+ <div class="heading">
+  <h2 data-t="appointmentTitle">د ملاقات غوښتنه</h2>
+  <p data-t="appointmentSubtitle">لاندې فورمه ډکه کړئ، ستاسو غوښتنه به ثبت شي.</p>
+ </div>
+ <form class="appointment" id="appointmentForm">
+  <div class="form-grid">
+   <div class="field">
+    <label for="patientName" data-t="fullName">بشپړ نوم</label>
+    <input id="patientName" maxlength="100" required placeholder="بشپړ نوم">
+   </div>
+   <div class="field">
+    <label for="patientPhone" data-t="phone">د ټیلیفون شمېره</label>
+    <input id="patientPhone" type="tel" maxlength="30" required placeholder="د ټیلیفون شمېره">
+   </div>
+   <div class="field">
+    <label for="appointmentDate" data-t="date">د ملاقات نېټه</label>
+    <input id="appointmentDate" type="date" required>
+   </div>
+   <div class="field">
+    <label for="department" data-t="chooseDept">طبي څانګه وټاکئ</label>
+    <select id="department" required>
+     <option value="" data-t="selectDept">څانګه وټاکئ</option>
+     <option value="General Medicine" data-t="general">عمومي طب</option>
+     <option value="Cardiology" data-t="cardiology">د زړه څانګه</option>
+     <option value="Pediatrics" data-t="pediatrics">د ماشومانو څانګه</option>
+     <option value="Orthopedics" data-t="orthopedics">د هډوکو څانګه</option>
+    </select>
+   </div>
+  </div>
+  <div class="field">
+   <label for="patientMessage" data-t="extra">اضافي معلومات (اختیاري)</label>
+   <textarea id="patientMessage" maxlength="500"></textarea>
+  </div>
+  <button type="submit" id="submitAppointment" data-t="submit">غوښتنه ثبت کړئ</button>
+  <p id="message" class="status" role="status"></p>
+ </form>
 </section>
 
-<section class="section" id="admin">
-<div class="heading">
-<h2 data-t="adminTitle">Admin Panel</h2>
-<p data-t="adminText">Authorized administration only</p>
-</div>
-<div class="admin-box">
-<form id="loginForm">
-<h3 data-t="adminLogin">Admin Login</h3>
-<input type="email" id="adminEmail" placeholder="Admin Email" required>
-<input type="password" id="adminPassword" placeholder="Password" required>
-<button type="submit" data-t="login">Login</button>
-<button type="button" class="reset-btn" id="resetPasswordButton">Forgot Password / Reset Password</button>
-<p id="loginStatus" class="status"></p>
-</form>
-
-<div class="admin-panel" id="adminPanel">
-<h2 data-t="dashboard">Admin Dashboard</h2>
-<p id="welcomeAdmin"></p>
-
-<h3 data-t="patientRecords">Patient Appointments</h3>
-<input class="search" id="searchAppointments" placeholder="Search name, phone or department">
-<button class="action" id="refreshAppointments" type="button" data-t="refresh">Refresh</button>
-<div id="appointmentsList"></div>
-
-<hr>
-
-<h3 data-t="registerDoctor">Register New Doctor</h3>
-<form id="doctorForm">
-<input id="doctorName" placeholder="Doctor Full Name" maxlength="100" required>
-<input id="doctorSpecialty" placeholder="Specialty / Department" maxlength="100" required>
-<input id="doctorPhone" placeholder="Phone Number" maxlength="30" required>
-<input id="doctorDays" placeholder="Working Days" maxlength="100" required>
-<input id="doctorHours" placeholder="Working Hours" maxlength="100" required>
-<input id="doctorImage" type="url" placeholder="Doctor Image Direct URL" required>
-<button id="saveDoctor" type="submit" data-t="register">Register Doctor</button>
-<p id="doctorMessage" class="status"></p>
-</form>
-
-<h3 data-t="registeredDoctors">Registered Doctors</h3>
-<div id="adminDoctors"></div>
-<button class="action danger" id="logoutButton" type="button" data-t="logout">Logout</button>
-</div>
-</div>
+<section class="section contact" id="contact">
+ <div class="heading">
+  <h2 data-t="contactTitle">زموږ سره اړیکه</h2>
+  <p data-t="contactSubtitle">د نورو معلوماتو لپاره له موږ سره اړیکه ونیسئ.</p>
+ </div>
+ <div class="contact-grid">
+  <div class="contact-item">
+   <h3 data-t="phoneTitle">ټیلیفون</h3>
+   <p><a href="tel:0773884496">0773884496</a></p>
+  </div>
+  <div class="contact-item">
+   <h3 data-t="emailTitle">ایمیل</h3>
+   <p><a href="mailto:Ihsanullahmohammadi2001@gmail.com">Ihsanullahmohammadi2001@gmail.com</a></p>
+  </div>
+ </div>
 </section>
 
-<footer>
-<p>© 2026 Hope Hospital | Quality Healthcare for Everyone</p>
-</footer>
+<!-- Admin login -->
+<section class="section login-section" id="adminLogin">
+ <div class="heading">
+  <h2 data-t="adminLogin">د اډمین ننوتل</h2>
+  <p data-t="adminOnly">دا برخه یوازې د روغتون د اډمین لپاره ده.</p>
+ </div>
+ <div class="login-box">
+  <form class="appointment" id="loginForm">
+   <div class="field">
+    <label for="adminEmail" data-t="email">ایمیل</label>
+    <input type="email" id="adminEmail" required placeholder="Admin Email">
+   </div>
+   <div class="field">
+    <label for="adminPassword" data-t="password">پاسورډ</label>
+    <input type="password" id="adminPassword" required placeholder="Password">
+   </div>
+   <button type="submit" id="loginButton" data-t="login">ننوتل</button>
+   <p id="loginMessage" class="status" role="status"></p>
+  </form>
+ </div>
+</section>
+
+<!-- Admin dashboard: hidden until authorized login -->
+<section class="section" id="adminPanel" hidden>
+ <div class="admin-top">
+  <div>
+   <h2 data-t="dashboard">د اډمین ډشبورډ</h2>
+   <p data-t="adminWelcome">د امید روغتون مدیریت</p>
+  </div>
+  <button type="button" id="logoutButton" data-t="logout">وتل</button>
+ </div>
+
+ <div class="admin-tools">
+  <h3 data-t="appointmentsManagement">د ناروغانو ملاقاتونه</h3>
+  <input type="search" id="searchPatient" data-t-placeholder="search" placeholder="د ناروغ نوم، شمېره یا څانګه ولټوئ">
+  <button type="button" id="loadPatients" data-t="refresh">معلومات تازه کړئ</button>
+  <p id="adminMessage" class="admin-message" role="status"></p>
+  <div id="patientList"></div>
+ </div>
+
+ <div class="admin-grid">
+  <div class="admin-tools">
+   <h3 data-t="addDoctor">نوی ډاکټر اضافه کړئ</h3>
+   <form id="doctorForm">
+    <div class="field">
+     <label for="doctorName" data-t="doctorName">د ډاکټر نوم</label>
+     <input id="doctorName" maxlength="100" required>
+    </div>
+    <div class="field">
+     <label for="doctorSpecialty" data-t="specialty">تخصص / څانګه</label>
+     <select id="doctorSpecialty" required>
+      <option value="General Medicine" data-t="general">عمومي طب</option>
+      <option value="Cardiology" data-t="cardiology">د زړه څانګه</option>
+      <option value="Pediatrics" data-t="pediatrics">د ماشومانو څانګه</option>
+      <option value="Orthopedics" data-t="orthopedics">د هډوکو څانګه</option>
+     </select>
+    </div>
+    <div class="field">
+     <label for="doctorPhone" data-t="doctorPhone">د ډاکټر ټیلیفون</label>
+     <input id="doctorPhone" type="tel" maxlength="30" required>
+    </div>
+    <div class="field">
+     <label for="doctorDays" data-t="workingDays">کاري ورځې</label>
+     <input id="doctorDays" maxlength="100" required>
+    </div>
+    <div class="field">
+     <label for="doctorHours" data-t="workingHours">کاري ساعتونه</label>
+     <input id="doctorHours" maxlength="100" required>
+    </div>
+    <div class="field">
+     <label for="doctorImage" data-t="imageUrl">د عکس مستقیم لینک</label>
+     <input id="doctorImage" type="url" placeholder="https://example.com/photo.jpg">
+    </div>
+    <button type="submit" id="addDoctorButton" data-t="saveDoctor">ډاکټر ثبت کړئ</button>
+    <p id="doctorMessage" class="admin-message" role="status"></p>
+    <p class="small-note" data-t="imageNote">د عکس مستقیم لینک وکاروئ. که عکس نه وي، تش پرېږدئ.</p>
+   </form>
+  </div>
+
+  <div class="admin-tools">
+   <h3 data-t="doctorList">د ډاکټرانو لست (یوازې اډمین)</h3>
+   <button type="button" id="loadDoctors" data-t="refreshDoctors">د ډاکټرانو لست تازه کړئ</button>
+   <p id="doctorListMessage" class="admin-message" role="status"></p>
+   <div id="doctorListContainer"></div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer data-t="footer">© 2026 Hope Hospital. ټول حقوق خوندي دي.</footer>
 
 <script>
-const words={
-en:{
-home:"Home",about:"About",departments:"Departments",doctors:"Doctors",appointment:"Appointment",admin:"Admin",
-welcome:"Welcome to Hope Hospital",hero:"Your Health, Our Priority. Professional care for you and your family.",book:"Book Appointment",
-aboutTitle:"About Our Hospital",aboutText:"Hope Hospital provides professional healthcare and quality medical services for all patients.",
-depTitle:"Our Departments",depText:"Medical services for your health",
-general:"General Medicine",generalText:"General medical consultation and treatment.",
-cardiology:"Cardiology",cardioText:"Heart health and cardiac care.",
-pediatrics:"Pediatrics",pediatricText:"Healthcare services for children.",
-orthopedics:"Orthopedics",orthoText:"Bone, joint and muscle care.",
-teamTitle:"Our Medical Team",teamText:"Meet our professional doctors",
-appointmentTitle:"Book an Appointment",appointmentText:"Please complete the form below",
-date:"Appointment Date",chooseDep:"Select Department",submit:"Submit Appointment",
-adminTitle:"Admin Panel",adminText:"Authorized administration only",adminLogin:"Admin Login",
-login:"Login",dashboard:"Admin Dashboard",patientRecords:"Patient Appointments",
-refresh:"Refresh Appointments",registerDoctor:"Register New Doctor",register:"Register Doctor",
-registeredDoctors:"Registered Doctors",logout:"Logout"
-},
+const translations={
 ps:{
-home:"کور",about:"زموږ په اړه",departments:"څانګې",doctors:"ډاکټران",appointment:"ملاقات",admin:"مدیر",
-welcome:"Hope Hospital روغتون ته ښه راغلاست",hero:"ستاسو روغتیا زموږ لومړیتوب دی. ستاسو او کورنۍ لپاره مسلکي خدمتونه.",book:"د ملاقات وخت واخلئ",
-aboutTitle:"زموږ د روغتون په اړه",aboutText:"Hope Hospital ټولو ناروغانو ته باکیفیته روغتیايي خدمتونه وړاندې کوي.",
-depTitle:"زموږ څانګې",depText:"ستاسو د روغتیا لپاره طبي خدمتونه",
-general:"عمومي طب",generalText:"عمومي طبي مشوره او درملنه.",
-cardiology:"د زړه څانګه",cardioText:"د زړه روغتیا او درملنه.",
-pediatrics:"د ماشومانو څانګه",pediatricText:"د ماشومانو روغتیايي خدمتونه.",
-orthopedics:"د هډوکو څانګه",orthoText:"د هډوکو او بندونو درملنه.",
-teamTitle:"زموږ طبي ټیم",teamText:"زموږ مسلکي ډاکټران",
-appointmentTitle:"د ملاقات وخت واخلئ",appointmentText:"مهرباني وکړئ فورمه ډکه کړئ",
-date:"د ملاقات نېټه",chooseDep:"څانګه انتخاب کړئ",submit:"ملاقات ثبت کړئ",
-adminTitle:"د مدیر برخه",adminText:"یوازې د مجاز مدیر لپاره",adminLogin:"د مدیر ننوتل",
-login:"ننوتل",dashboard:"د مدیر ډشبورډ",patientRecords:"د ناروغانو ملاقاتونه",
-refresh:"معلومات تازه کړئ",registerDoctor:"نوی ډاکټر ثبت کړئ",register:"ډاکټر ثبت کړئ",
-registeredDoctors:"ثبت شوي ډاکټران",logout:"وتل"
+home:"کور",about:"زموږ په اړه",departments:"طبي څانګې",ourDoctors:"زموږ ډاکټران",appointment:"ملاقات",contact:"اړیکه",admin:"اډمین",
+welcome:"د امید روغتون ته ښه راغلاست",heroTitle:"ستاسو روغتیا، زموږ لومړیتوب دی",
+heroText:"موږ هڅه کوو چې تاسو ته د روغتیا په برخه کې غوره او مسلکي خدمتونه وړاندې کړو.",
+book:"د ملاقات وخت واخلئ",aboutTitle:"زموږ په اړه",aboutSubtitle:"د امید روغتون؛ د روغتیا او پاملرنې لپاره ستاسو ملګری",
+aboutText:"د امید روغتون موخه خلکو ته د روغتیايي خدمتونو په اړه اسانه معلومات او د ملاقات د غوښتنې اسانتیا برابرول دي.",
+f1:"مسلکي پاملرنه",f1p:"د ناروغانو روغتیا ته پاملرنه",f2:"د ملاقات غوښتنه",f2p:"په اسانۍ د ملاقات غوښتنه وکړئ",f3:"درې ژبې",f3p:"پښتو، دري او انګلیسي",
+deptTitle:"زموږ طبي څانګې",deptSubtitle:"څلور مهمې طبي څانګې په یوه منظم او ښکلي ځای کې",
+general:"عمومي طب",generalText:"د عمومي ناروغیو معاینه او روغتیايي مشورې.",
+cardiology:"د زړه څانګه",cardiologyText:"د زړه او وینې د رګونو روغتیايي پاملرنه.",
+pediatrics:"د ماشومانو څانګه",pediatricsText:"د ماشومانو روغتیا او طبي معاینات.",
+orthopedics:"د هډوکو څانګه",orthopedicsText:"د هډوکو، بندونو او عضلاتو پاملرنه.",
+bookNow:"ملاقات وغواړئ",ourDoctorsText:"زموږ د طبي څانګو مسلکي ډاکټران",
+loadingDoctors:"د ډاکټرانو معلومات لوډ کېږي...",
+appointmentTitle:"د ملاقات غوښتنه",appointmentSubtitle:"لاندې فورمه ډکه کړئ، ستاسو غوښتنه به ثبت شي.",
+fullName:"بشپړ نوم",phone:"د ټیلیفون شمېره",date:"د ملاقات نېټه",chooseDept:"طبي څانګه وټاکئ",selectDept:"څانګه وټاکئ",extra:"اضافي معلومات (اختیاري)",submit:"غوښتنه ثبت کړئ",
+contactTitle:"زموږ سره اړیکه",contactSubtitle:"د نورو معلوماتو لپاره له موږ سره اړیکه ونیسئ.",phoneTitle:"ټیلیفون",emailTitle:"ایمیل",
+adminLogin:"د اډمین ننوتل",adminOnly:"دا برخه یوازې د روغتون د اډمین لپاره ده.",email:"ایمیل",password:"پاسورډ",login:"ننوتل",
+dashboard:"د اډمین ډشبورډ",adminWelcome:"د امید روغتون مدیریت",logout:"وتل",appointmentsManagement:"د ناروغانو ملاقاتونه",
+refresh:"معلومات تازه کړئ",addDoctor:"نوی ډاکټر اضافه کړئ",doctorName:"د ډاکټر نوم",specialty:"تخصص / څانګه",doctorPhone:"د ډاکټر ټیلیفون",
+workingDays:"کاري ورځې",workingHours:"کاري ساعتونه",imageUrl:"د عکس مستقیم لینک",saveDoctor:"ډاکټر ثبت کړئ",doctorList:"د ډاکټرانو لست (یوازې اډمین)",
+refreshDoctors:"د ډاکټرانو لست تازه کړئ",imageNote:"د عکس مستقیم لینک وکاروئ. که عکس نه وي، تش پرېږدئ.",
+footer:"© 2026 د امید روغتون. ټول حقوق خوندي دي.",
+complete:"مهرباني وکړئ ټول اړین ځایونه ډک کړئ.",pastDate:"د نن ورځې یا راتلونکې نېټه وټاکئ.",
+submitting:"غوښتنه ثبتېږي...",submitted:"ستاسو د ملاقات غوښتنه ثبت شوه!",submitError:"د ثبت ستونزه: ",
+signing:"ننوتل...",loginSuccess:"اډمین په بریالیتوب داخل شو.",loginError:"ننوتل ناکام شول: ",notAdmin:"دا ایمیل د اډمین اجازه نه لري.",
+loading:"معلومات لوډ کېږي...",loadError:"د معلوماتو ستونزه: ",total:"ټول ملاقاتونه: ",noPatients:"ملاقات ونه موندل شو.",
+delete:"حذف",confirmDelete:"ایا ډاډه یاست چې حذف یې کړئ؟",deleted:"په بریالیتوب حذف شو.",deleteError:"حذف ناکام شو: ",
+doctorSaved:"ډاکټر ثبت شو.",doctorSaveError:"د ډاکټر د ثبت ستونزه: ",noDoctors:"تر اوسه ډاکټر نه دی ثبت شوی.",
+doctorDeleteConfirm:"دا ډاکټر حذف کړئ؟",doctorDeleted:"ډاکټر حذف شو.",search:"د ناروغ نوم، شمېره یا څانګه ولټوئ",
+specialtyLabel:"تخصص: ",doctorPhoneLabel:"ټیلیفون: ",daysLabel:"کاري ورځې: ",hoursLabel:"کاري ساعتونه: ",
+pleaseLogin:"مهرباني وکړئ د اډمین په توګه ننوځئ.",loggedOut:"له حساب څخه ووتلئ.",
+publicLoadError:"د ډاکټرانو د معلوماتو ستونزه: "
 },
 fa:{
-home:"خانه",about:"درباره ما",departments:"بخش‌ها",doctors:"داکتران",appointment:"نوبت",admin:"مدیر",
-welcome:"به شفاخانه Hope Hospital خوش آمدید",hero:"سلامتی شما اولویت ماست. خدمات صحی مسلکی برای شما و خانواده تان.",book:"گرفتن نوبت",
-aboutTitle:"درباره شفاخانه ما",aboutText:"شفاخانه Hope Hospital خدمات صحی باکیفیت و مراقبت مسلکی ارائه می‌کند.",
-depTitle:"بخش‌های ما",depText:"خدمات طبی برای سلامتی شما",
-general:"طب عمومی",generalText:"مشاوره و تداوی عمومی.",
-cardiology:"قلب",cardioText:"خدمات صحی قلب.",
-pediatrics:"اطفال",pediatricText:"خدمات صحی برای کودکان.",
-orthopedics:"ارتوپیدی",orthoText:"تداوی استخوان‌ها و مفاصل.",
-teamTitle:"تیم طبی ما",teamText:"با داکتران مسلکی ما آشنا شوید",
-appointmentTitle:"گرفتن نوبت",appointmentText:"لطفاً فورم زیر را خانه‌پری کنید",
-date:"تاریخ نوبت",chooseDep:"انتخاب بخش",submit:"ثبت نوبت",
-adminTitle:"بخش مدیریت",adminText:"فقط برای مدیر مجاز",adminLogin:"ورود مدیر",
-login:"ورود",dashboard:"داشبورد مدیریت",patientRecords:"نوبت‌های بیماران",
-refresh:"تازه‌سازی",registerDoctor:"ثبت داکتر جدید",register:"ثبت داکتر",
-registeredDoctors:"داکتران ثبت‌شده",logout:"خروج"
+home:"خانه",about:"درباره ما",departments:"بخش‌های طبی",ourDoctors:"داکتران ما",appointment:"ملاقات",contact:"تماس",admin:"مدیر",
+welcome:"به شفاخانه امید خوش آمدید",heroTitle:"سلامتی شما، اولویت ما است",
+heroText:"ما تلاش می‌کنیم خدمات صحی بهتر و مسلکی برای شما فراهم کنیم.",
+book:"درخواست ملاقات",aboutTitle:"درباره ما",aboutSubtitle:"شفاخانه امید؛ همراه شما برای صحت و مراقبت",
+aboutText:"هدف شفاخانه امید ارائه معلومات صحی و آسان‌سازی درخواست ملاقات برای مردم است.",
+f1:"مراقبت مسلکی",f1p:"توجه به صحت مریضان",f2:"درخواست ملاقات",f2p:"به آسانی درخواست ملاقات کنید",f3:"سه زبان",f3p:"پشتو، دری و انگلیسی",
+deptTitle:"بخش‌های طبی ما",deptSubtitle:"چهار بخش مهم طبی در یک جای منظم",
+general:"طب عمومی",generalText:"معاینه بیماری‌های عمومی و مشوره صحی.",
+cardiology:"بخش قلب",cardiologyText:"مراقبت صحت قلب و رگ‌های خون.",
+pediatrics:"بخش اطفال",pediatricsText:"صحت و معاینات طبی اطفال.",
+orthopedics:"بخش استخوان",orthopedicsText:"مراقبت استخوان‌ها، مفاصل و عضلات.",
+bookNow:"درخواست ملاقات",ourDoctorsText:"داکتران مسلکی بخش‌های طبی ما",
+loadingDoctors:"معلومات داکتران بارگذاری می‌شود...",
+appointmentTitle:"درخواست ملاقات",appointmentSubtitle:"فورمه زیر را خانه‌پری کنید.",
+fullName:"نام مکمل",phone:"شماره تماس",date:"تاریخ ملاقات",chooseDept:"بخش طبی را انتخاب کنید",selectDept:"انتخاب بخش",extra:"معلومات اضافی (اختیاری)",submit:"ثبت درخواست",
+contactTitle:"تماس با ما",contactSubtitle:"برای معلومات بیشتر با ما تماس بگیرید.",phoneTitle:"تلفون",emailTitle:"ایمیل",
+adminLogin:"ورود مدیر",adminOnly:"این بخش فقط برای مدیر شفاخانه است.",email:"ایمیل",password:"رمز عبور",login:"ورود",
+dashboard:"داشبورد مدیر",adminWelcome:"مدیریت شفاخانه امید",logout:"خروج",appointmentsManagement:"ملاقات‌های مریضان",
+refresh:"تازه‌سازی معلومات",addDoctor:"اضافه کردن داکتر",doctorName:"نام داکتر",specialty:"تخصص / بخش",doctorPhone:"شماره تماس داکتر",
+workingDays:"روزهای کاری",workingHours:"ساعات کاری",imageUrl:"لینک مستقیم عکس",saveDoctor:"ثبت داکتر",doctorList:"لست داکتران (فقط مدیر)",
+refreshDoctors:"تازه‌سازی لست داکتران",imageNote:"لینک مستقیم عکس را وارد کنید. اگر عکس ندارید خالی بگذارید.",
+footer:"© 2026 شفاخانه امید. تمام حقوق محفوظ است.",
+complete:"لطفاً تمام بخش‌های ضروری را خانه‌پری کنید.",pastDate:"تاریخ امروز یا آینده را انتخاب کنید.",
+submitting:"درخواست ثبت می‌شود...",submitted:"درخواست ملاقات شما ثبت شد!",submitError:"خطا در ثبت: ",
+signing:"در حال ورود...",loginSuccess:"مدیر با موفقیت وارد شد.",loginError:"ورود ناکام شد: ",notAdmin:"این ایمیل اجازه مدیریت ندارد.",
+loading:"معلومات در حال بارگذاری...",loadError:"خطا در معلومات: ",total:"مجموع ملاقات‌ها: ",noPatients:"ملاقاتی پیدا نشد.",
+delete:"حذف",confirmDelete:"آیا مطمئن هستید که حذف کنید؟",deleted:"با موفقیت حذف شد.",deleteError:"حذف ناکام شد: ",
+doctorSaved:"داکتر ثبت شد.",doctorSaveError:"خطا در ثبت داکتر: ",noDoctors:"هنوز داکتری ثبت نشده است.",
+doctorDeleteConfirm:"این داکتر حذف شود؟",doctorDeleted:"داکتر حذف شد.",search:"جستجوی نام، شماره یا بخش مریض",
+specialtyLabel:"تخصص: ",doctorPhoneLabel:"شماره تماس: ",daysLabel:"روزهای کاری: ",hoursLabel:"ساعات کاری: ",
+pleaseLogin:"لطفاً به عنوان مدیر وارد شوید.",loggedOut:"از حساب خارج شدید.",
+publicLoadError:"خطا در معلومات داکتران: "
+},
+en:{
+home:"Home",about:"About",departments:"Departments",ourDoctors:"Our Doctors",appointment:"Appointment",contact:"Contact",admin:"Admin",
+welcome:"Welcome to Hope Hospital",heroTitle:"Your Health Is Our Priority",
+heroText:"We aim to provide you with better and professional healthcare services.",
+book:"Request Appointment",aboutTitle:"About Us",aboutSubtitle:"Hope Hospital; your partner in health and care",
+aboutText:"Hope Hospital aims to provide accessible health information and easy appointment requests.",
+f1:"Professional Care",f1p:"Attention to patient health",f2:"Appointment Request",f2p:"Request an appointment easily",f3:"Three Languages",f3p:"Pashto, Dari and English",
+deptTitle:"Our Medical Departments",deptSubtitle:"Four important medical departments in one organized place",
+general:"General Medicine",generalText:"General medical examinations and health consultations.",
+cardiology:"Cardiology",cardiologyText:"Heart and blood vessel health care.",
+pediatrics:"Pediatrics",pediatricsText:"Healthcare and medical examinations for children.",
+orthopedics:"Orthopedics",orthopedicsText:"Care for bones, joints and muscles.",
+bookNow:"Book Appointment",ourDoctorsText:"Professional doctors in our medical departments",
+loadingDoctors:"Loading doctors...",
+appointmentTitle:"Appointment Request",appointmentSubtitle:"Complete the form below to submit your request.",
+fullName:"Full Name",phone:"Phone Number",date:"Appointment Date",chooseDept:"Choose Department",selectDept:"Select Department",extra:"Additional Information (optional)",submit:"Submit Request",
+contactTitle:"Contact Us",contactSubtitle:"Contact us for more information.",phoneTitle:"Phone",emailTitle:"Email",
+adminLogin:"Admin Login",adminOnly:"This section is only for the hospital administrator.",email:"Email",password:"Password",login:"Login",
+dashboard:"Admin Dashboard",adminWelcome:"Hope Hospital Management",logout:"Logout",appointmentsManagement:"Patient Appointments",
+refresh:"Refresh Information",addDoctor:"Add New Doctor",doctorName:"Doctor Name",specialty:"Specialty / Department",doctorPhone:"Doctor Phone",
+workingDays:"Working Days",workingHours:"Working Hours",imageUrl:"Direct Image URL",saveDoctor:"Save Doctor",doctorList:"Doctors List (Admin Only)",
+refreshDoctors:"Refresh Doctors List",imageNote:"Use a direct image URL. Leave blank if there is no photo.",
+footer:"© 2026 Hope Hospital. All Rights Reserved.",
+complete:"Please complete all required fields.",pastDate:"Please select today or a future date.",
+submitting:"Submitting request...",submitted:"Your appointment request has been submitted!",submitError:"Submission error: ",
+signing:"Signing in...",loginSuccess:"Admin login successful.",loginError:"Login failed: ",notAdmin:"This email is not authorized as administrator.",
+loading:"Loading information...",loadError:"Loading error: ",total:"Total appointments: ",noPatients:"No appointments found.",
+delete:"Delete",confirmDelete:"Are you sure you want to delete this?",deleted:"Deleted successfully.",deleteError:"Delete failed: ",
+doctorSaved:"Doctor saved successfully.",doctorSaveError:"Doctor save error: ",noDoctors:"No doctors have been registered yet.",
+doctorDeleteConfirm:"Delete this doctor?",doctorDeleted:"Doctor deleted.",search:"Search patient by name, phone or department",
+specialtyLabel:"Specialty: ",doctorPhoneLabel:"Phone: ",daysLabel:"Working days: ",hoursLabel:"Working hours: ",
+pleaseLogin:"Please login as administrator.",loggedOut:"You have logged out.",
+publicLoadError:"Public doctors loading error: "
 }
 };
 
+let currentLanguage="ps";
+const $=id=>document.getElementById(id);
+
+function tr(key){
+ return translations[currentLanguage][key]||translations.en[key]||key;
+}
+
 function setLanguage(lang){
- const t=words[lang]||words.en;
+ if(!translations[lang])lang="ps";
+ currentLanguage=lang;
  document.documentElement.lang=lang;
  document.documentElement.dir=lang==="en"?"ltr":"rtl";
+ $("language").value=lang;
+
  document.querySelectorAll("[data-t]").forEach(el=>{
   const key=el.dataset.t;
-  if(t[key])el.textContent=t[key];
+  if(translations[lang][key])el.textContent=translations[lang][key];
+ });
+
+ document.querySelectorAll("[data-t-placeholder]").forEach(el=>{
+  el.placeholder=tr(el.dataset.tPlaceholder);
  });
 }
-document.getElementById("language").addEventListener("change",e=>setLanguage(e.target.value));
+$("language").addEventListener("change",e=>setLanguage(e.target.value));
+setLanguage("ps");
+
+const today=new Date();
+const localToday=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+$("appointmentDate").min=localToday;
+
+document.querySelectorAll(".deptBtn").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  $("department").value=btn.dataset.dept;
+ });
+});
 </script>
 
 <script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+import {initializeApp}
+from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 
 import {
- getAuth,
- signInWithEmailAndPassword,
- signOut,
- onAuthStateChanged,
- sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+ getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
  getFirestore,collection,getDocs,addDoc,deleteDoc,doc,
  serverTimestamp,query,orderBy
-} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig={
-apiKey:"AIzaSyARASnD73pfXaLF_yvxqcUSsdvbRPyLCKw",
-authDomain:"hope-hospital-3db78.firebaseapp.com",
-projectId:"hope-hospital-3db78",
-storageBucket:"hope-hospital-3db78.firebasestorage.app",
-messagingSenderId:"905261414674",
-appId:"1:905261414674:web:32660ca8005df53a485bcb"
+ apiKey:"AIzaSyARASnD73pfXaLF_yvxqcUSsdvbRPyLCKw",
+ authDomain:"hope-hospital-3db78.firebaseapp.com",
+ projectId:"hope-hospital-3db78",
+ storageBucket:"hope-hospital-3db78.firebasestorage.app",
+ messagingSenderId:"905261414674",
+ appId:"1:905261414674:web:32660ca8005df53a485bcb"
 };
 
-const ADMIN_EMAIL="ihsanullahmohammadi2001@gmail.com";
 const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
 const db=getFirestore(app);
+const ADMIN_EMAIL="ihsanullahmohammadi2001@gmail.com";
+
 const $=id=>document.getElementById(id);
+const tr=key=>translations[currentLanguage][key]||translations.en[key]||key;
 
 let isAdmin=false;
 let appointments=[];
+let doctors=[];
 
-function message(id,text){
+function showText(id,text){
  $(id).textContent=text;
 }
+function safeText(value){
+ return value===undefined||value===null?"":String(value);
+}
 
-/* Patient Appointment */
+function departmentName(value){
+ const key={
+  "General Medicine":"general",
+  "Cardiology":"cardiology",
+  "Pediatrics":"pediatrics",
+  "Orthopedics":"orthopedics"
+ }[value];
+ return key?tr(key):safeText(value);
+}
+
+// PUBLIC DOCTORS: anyone can see doctor information
+async function loadPublicDoctors(){
+ const container=$("publicDoctorList");
+ container.replaceChildren();
+
+ const departments=[
+  "General Medicine",
+  "Cardiology",
+  "Pediatrics",
+  "Orthopedics"
+ ];
+
+ try{
+  const snap=await getDocs(collection(db,"doctors"));
+  const publicDoctors=snap.docs.map(d=>({
+   id:d.id,...d.data()
+  }));
+
+  departments.forEach(dept=>{
+   const group=document.createElement("div");
+   group.className="public-doctor-group";
+
+   const heading=document.createElement("h3");
+   heading.textContent=departmentName(dept);
+
+   const cards=document.createElement("div");
+   cards.className="public-doctor-cards";
+
+   const filtered=publicDoctors.filter(d=>d.specialty===dept);
+
+   if(filtered.length===0){
+    const empty=document.createElement("div");
+    empty.className="no-doctors";
+    empty.textContent=tr("noDoctors");
+    cards.appendChild(empty);
+   }
+
+   filtered.forEach(d=>{
+    const card=document.createElement("article");
+    card.className="public-doctor-card";
+
+    const img=document.createElement("img");
+    img.src=d.imageUrl||"https://placehold.co/300x300?text=Doctor";
+    img.alt=safeText(d.name);
+    img.loading="lazy";
+    img.onerror=()=>{
+     img.onerror=null;
+     img.src="https://placehold.co/300x300?text=Doctor";
+    };
+
+    const name=document.createElement("h4");
+    name.textContent=safeText(d.name);
+
+    const specialty=document.createElement("p");
+    specialty.textContent=tr("specialtyLabel")+departmentName(d.specialty);
+
+    const days=document.createElement("p");
+    days.textContent=tr("daysLabel")+safeText(d.days);
+
+    const hours=document.createElement("p");
+    hours.textContent=tr("hoursLabel")+safeText(d.hours);
+
+    const call=document.createElement("a");
+    call.className="call-doctor";
+    call.href="tel:"+safeText(d.phone).replace(/[^\d+]/g,"");
+    call.textContent=tr("doctorPhoneLabel")+safeText(d.phone);
+
+    card.append(img,name,specialty,days,hours,call);
+    cards.appendChild(card);
+   });
+
+   group.append(heading,cards);
+   container.appendChild(group);
+  });
+
+ }catch(error){
+  console.error("Public doctors error:",error);
+  container.textContent=tr("publicLoadError")+error.message;
+ }
+}
+
+// Appointment submission: public
 $("appointmentForm").addEventListener("submit",async e=>{
  e.preventDefault();
 
- const btn=$("appointmentSubmit");
- btn.disabled=true;
- message("appointmentStatus","Saving...");
+ const name=$("patientName").value.trim();
+ const phone=$("patientPhone").value.trim();
+ const date=$("appointmentDate").value;
+ const department=$("department").value;
+ const message=$("patientMessage").value.trim();
+
+ if(!name||!phone||!date||!department){
+  showText("message",tr("complete"));
+  return;
+ }
+
+ if(date<localToday){
+  showText("message",tr("pastDate"));
+  return;
+ }
+
+ $("submitAppointment").disabled=true;
+ showText("message",tr("submitting"));
 
  try{
-  const name=$("patientName").value.trim();
-  const phone=$("patientPhone").value.trim();
-  const date=$("patientDate").value;
-  const department=$("patientDepartment").value;
-  const note=$("patientMessage").value.trim();
-
-  if(!name||!phone||!date||!department)
-   throw Error("Please complete all required fields.");
-
-  if(date<new Date().toISOString().slice(0,10))
-   throw Error("Please select a valid date.");
-
   await addDoc(collection(db,"appointments"),{
-   name,phone,date,department,
-   message:note,
+   name,phone,date,department,message,
    createdAt:serverTimestamp()
   });
 
-  message("appointmentStatus","Appointment submitted successfully!");
+  showText("message",tr("submitted"));
   $("appointmentForm").reset();
-
- }catch(err){
-  message("appointmentStatus","Error: "+err.message);
+  $("appointmentDate").min=localToday;
+ }catch(error){
+  console.error(error);
+  showText("message",tr("submitError")+error.message);
  }finally{
-  btn.disabled=false;
+  $("submitAppointment").disabled=false;
  }
 });
 
-$("patientDate").min=new Date().toISOString().slice(0,10);
-
-/* Admin Login */
+// Admin login
 $("loginForm").addEventListener("submit",async e=>{
  e.preventDefault();
 
- const email=$("adminEmail").value.trim();
+ const email=$("adminEmail").value.trim().toLowerCase();
  const password=$("adminPassword").value;
 
- message("loginStatus","Signing in...");
+ $("loginButton").disabled=true;
+ showText("loginMessage",tr("signing"));
 
  try{
-  if(email.toLowerCase()!==ADMIN_EMAIL.toLowerCase()){
-   throw Error("Please enter the registered Admin email.");
+  if(email!==ADMIN_EMAIL.toLowerCase()){
+   throw new Error(tr("notAdmin"));
   }
 
   await signInWithEmailAndPassword(auth,email,password);
-  message("loginStatus","Login successful.");
-
- }catch(err){
-  message("loginStatus","Login failed: "+err.message);
- }
-});
-
-/* Password Reset */
-$("resetPasswordButton").addEventListener("click",async()=>{
- const email=$("adminEmail").value.trim();
- const btn=$("resetPasswordButton");
-
- if(!email){
-  message("loginStatus","Please enter your Admin email first.");
-  $("adminEmail").focus();
-  return;
- }
-
- if(email.toLowerCase()!==ADMIN_EMAIL.toLowerCase()){
-  message("loginStatus","Please enter the registered Admin email.");
-  return;
- }
-
- btn.disabled=true;
- message("loginStatus","Sending password reset email...");
-
- try{
-  await sendPasswordResetEmail(auth,email);
-  message("loginStatus","Password reset email sent! Check your inbox and Spam folder.");
- }catch(err){
-  message("loginStatus","Reset error: "+err.code+" - "+err.message);
+  showText("loginMessage",tr("loginSuccess"));
+ }catch(error){
+  console.error(error);
+  showText("loginMessage",tr("loginError")+error.message);
  }finally{
-  btn.disabled=false;
+  $("loginButton").disabled=false;
  }
 });
 
-/* Authentication */
+// Admin login state
 onAuthStateChanged(auth,async user=>{
- isAdmin=!!user&&user.email===ADMIN_EMAIL;
+ isAdmin=!!(
+  user&&user.email&&
+  user.email.toLowerCase()===ADMIN_EMAIL.toLowerCase()
+ );
 
- $("adminPanel").style.display=isAdmin?"block":"none";
- $("loginForm").style.display=isAdmin?"none":"block";
- $("welcomeAdmin").textContent=isAdmin?"Welcome, "+user.email:"";
+ $("adminPanel").hidden=!isAdmin;
+ $("adminLogin").hidden=isAdmin;
+ $("adminNavLink").href=isAdmin?"#adminPanel":"#adminLogin";
 
  if(isAdmin){
   await loadAppointments();
+  await loadDoctors();
  }else{
-  $("appointmentsList").innerHTML="";
+  appointments=[];
+  doctors=[];
+  $("patientList").replaceChildren();
+  $("doctorListContainer").replaceChildren();
  }
-
- await loadDoctors();
 });
 
-/* Appointments */
+// Load patient appointments: admin only
 async function loadAppointments(){
  if(!isAdmin)return;
 
- $("appointmentsList").textContent="Loading...";
+ showText("adminMessage",tr("loading"));
 
  try{
-  const q=query(collection(db,"appointments"),orderBy("createdAt","desc"));
-  const snap=await getDocs(q);
+  const q=query(
+   collection(db,"appointments"),
+   orderBy("createdAt","desc")
+  );
 
+  const snap=await getDocs(q);
   appointments=snap.docs.map(d=>({
    id:d.id,...d.data()
   }));
 
+  showText("adminMessage",tr("total")+appointments.length);
   renderAppointments();
-
- }catch(err){
-  $("appointmentsList").textContent="Error: "+err.message;
+ }catch(error){
+  console.error(error);
+  showText("adminMessage",tr("loadError")+error.message);
  }
 }
 
 function renderAppointments(){
- const search=$("searchAppointments").value.toLowerCase().trim();
- const list=$("appointmentsList");
- list.innerHTML="";
+ if(!isAdmin)return;
 
- const found=appointments.filter(p=>
-  [p.name,p.phone,p.department,p.date].some(v=>
-   String(v||"").toLowerCase().includes(search)
-  )
- );
+ const container=$("patientList");
+ container.replaceChildren();
 
- if(!found.length){
-  list.textContent="No appointments found.";
+ const search=$("searchPatient").value.trim().toLowerCase();
+
+ const filtered=appointments.filter(p=>{
+  return safeText(p.name).toLowerCase().includes(search)||
+   safeText(p.phone).toLowerCase().includes(search)||
+   safeText(p.department).toLowerCase().includes(search)||
+   departmentName(p.department).toLowerCase().includes(search)||
+   safeText(p.date).includes(search);
+ });
+
+ if(!filtered.length){
+  container.textContent=tr("noPatients");
   return;
  }
 
- found.forEach(p=>{
+ filtered.forEach(p=>{
   const box=document.createElement("div");
   box.className="patient";
 
   const title=document.createElement("h3");
-  title.textContent=p.name||"";
+  title.textContent=safeText(p.name);
 
-  const phone=document.createElement("p");
-  phone.textContent="Phone: "+(p.phone||"");
+  const details=document.createElement("p");
+  details.textContent=
+   tr("phone")+": "+safeText(p.phone)+" | "+
+   tr("date")+": "+safeText(p.date)+" | "+
+   departmentName(p.department);
 
-  const date=document.createElement("p");
-  date.textContent="Date: "+(p.date||"");
-
-  const dep=document.createElement("p");
-  dep.textContent="Department: "+(p.department||"");
-
-  const note=document.createElement("p");
-  note.textContent="Message: "+(p.message||"");
+  const extra=document.createElement("p");
+  extra.textContent=safeText(p.message);
 
   const del=document.createElement("button");
-  del.className="action danger";
-  del.textContent="Delete";
+  del.textContent=tr("delete");
 
-  del.onclick=async()=>{
-   if(!isAdmin||!confirm("Delete this appointment?"))return;
+  del.addEventListener("click",async()=>{
+   if(!isAdmin||!confirm(tr("confirmDelete")))return;
+
+   del.disabled=true;
 
    try{
     await deleteDoc(doc(db,"appointments",p.id));
     await loadAppointments();
-   }catch(err){
-    alert(err.message);
-   }
-  };
-
-  box.append(title,phone,date,dep,note,del);
-  list.appendChild(box);
- });
-}
-
-$("searchAppointments").addEventListener("input",renderAppointments);
-$("refreshAppointments").addEventListener("click",loadAppointments);
-
-/* Doctors */
-async function loadDoctors(){
- const publicList=$("publicDoctors");
- const adminList=$("adminDoctors");
-
- publicList.innerHTML="Loading doctors...";
- adminList.innerHTML="";
-
- try{
-  const snap=await getDocs(collection(db,"doctors"));
-  publicList.innerHTML="";
-
-  if(snap.empty){
-   publicList.textContent="No doctors registered yet.";
-   return;
-  }
-
-  snap.forEach(item=>{
-   const d=item.data();
-   const id=item.id;
-
-   const card=document.createElement("div");
-   card.className="doctor-card";
-
-   const img=document.createElement("img");
-   img.src=d.imageUrl||"";
-   img.alt=d.name||"Doctor";
-   img.loading="lazy";
-   img.onerror=()=>{img.alt="Image unavailable"};
-
-   const h=document.createElement("h3");
-   h.textContent=d.name||"";
-
-   const s=document.createElement("p");
-   s.textContent="Specialty: "+(d.specialty||"");
-
-   const p=document.createElement("p");
-   p.textContent="Phone: "+(d.phone||"");
-
-   const days=document.createElement("p");
-   days.textContent="Working Days: "+(d.days||"");
-
-   const hours=document.createElement("p");
-   hours.textContent="Working Hours: "+(d.hours||"");
-
-   card.append(img,h,s,p,days,hours);
-   publicList.appendChild(card);
-
-   if(isAdmin){
-    const adminCard=card.cloneNode(true);
-    adminCard.className="admin-doctor";
-
-    const del=document.createElement("button");
-    del.className="action danger";
-    del.textContent="Delete Doctor";
-
-    del.onclick=async()=>{
-     if(!isAdmin||!confirm("Delete this doctor?"))return;
-
-     try{
-      await deleteDoc(doc(db,"doctors",id));
-      message("doctorMessage","Doctor deleted.");
-      await loadDoctors();
-     }catch(err){
-      message("doctorMessage","Error: "+err.message);
-     }
-    };
-
-    adminCard.appendChild(del);
-    adminList.appendChild(adminCard);
+   }catch(error){
+    showText("adminMessage",tr("deleteError")+error.message);
+    del.disabled=false;
    }
   });
 
- }catch(err){
-  publicList.textContent="Could not load doctors: "+err.message;
- }
+  box.append(title,details,extra,del);
+  container.appendChild(box);
+ });
 }
 
-/* Add Doctor */
+$("searchPatient").addEventListener("input",renderAppointments);
+$("loadPatients").addEventListener("click",loadAppointments);
+
+// Add doctor: admin only
 $("doctorForm").addEventListener("submit",async e=>{
  e.preventDefault();
 
  if(!isAdmin){
-  message("doctorMessage","Admin login required.");
+  showText("doctorMessage",tr("pleaseLogin"));
   return;
  }
 
  const name=$("doctorName").value.trim();
- const specialty=$("doctorSpecialty").value.trim();
+ const specialty=$("doctorSpecialty").value;
  const phone=$("doctorPhone").value.trim();
  const days=$("doctorDays").value.trim();
  const hours=$("doctorHours").value.trim();
  const imageUrl=$("doctorImage").value.trim();
 
- const btn=$("saveDoctor");
- btn.disabled=true;
+ if(!name||!specialty||!phone||!days||!hours){
+  showText("doctorMessage",tr("complete"));
+  return;
+ }
 
- message("doctorMessage","Saving...");
+ if(imageUrl){
+  try{
+   const parsed=new URL(imageUrl);
+   if(!["http:","https:"].includes(parsed.protocol)){
+    throw new Error();
+   }
+  }catch{
+   showText("doctorMessage","Please enter a valid image URL.");
+   return;
+  }
+ }
+
+ $("addDoctorButton").disabled=true;
 
  try{
-  const url=new URL(imageUrl);
-
-  if(!["https:","http:"].includes(url.protocol))
-   throw Error("Enter a valid image URL.");
-
-  if(!name||!specialty||!phone||!days||!hours)
-   throw Error("Complete all fields.");
-
   await addDoc(collection(db,"doctors"),{
-   name,specialty,phone,days,hours,imageUrl,
+   name,
+   specialty,
+   phone,
+   days,
+   hours,
+   imageUrl,
    createdAt:serverTimestamp()
   });
 
   $("doctorForm").reset();
-  message("doctorMessage","Doctor registered successfully!");
-  await loadDoctors();
+  showText("doctorMessage",tr("doctorSaved"));
 
- }catch(err){
-  message("doctorMessage","Error: "+err.message);
+  // Refresh admin list and public doctor cards
+  await loadDoctors();
+  await loadPublicDoctors();
+
+ }catch(error){
+  console.error(error);
+  showText("doctorMessage",tr("doctorSaveError")+error.message);
  }finally{
-  btn.disabled=false;
+  $("addDoctorButton").disabled=false;
  }
 });
 
-/* Logout */
+// Load doctors in admin dashboard
+async function loadDoctors(){
+ if(!isAdmin)return;
+
+ showText("doctorListMessage",tr("loading"));
+
+ try{
+  const snap=await getDocs(query(
+   collection(db,"doctors"),
+   orderBy("createdAt","desc")
+  ));
+
+  doctors=snap.docs.map(d=>({
+   id:d.id,...d.data()
+  }));
+
+  showText(
+   "doctorListMessage",
+   doctors.length?`${tr("doctorList")}: ${doctors.length}`:tr("noDoctors")
+  );
+
+  renderDoctors();
+
+ }catch(error){
+  console.error(error);
+  showText("doctorListMessage",tr("loadError")+error.message);
+ }
+}
+
+function renderDoctors(){
+ if(!isAdmin)return;
+
+ const container=$("doctorListContainer");
+ container.replaceChildren();
+
+ if(!doctors.length){
+  container.textContent=tr("noDoctors");
+  return;
+ }
+
+ doctors.forEach(d=>{
+  const box=document.createElement("div");
+  box.className="doctor-item";
+
+  if(d.imageUrl){
+   const img=document.createElement("img");
+   img.src=d.imageUrl;
+   img.alt=safeText(d.name);
+   img.onerror=()=>img.remove();
+   box.appendChild(img);
+  }
+
+  const title=document.createElement("h3");
+  title.textContent=safeText(d.name);
+
+  const specialty=document.createElement("p");
+  specialty.textContent=tr("specialtyLabel")+departmentName(d.specialty);
+
+  const phone=document.createElement("p");
+  phone.textContent=tr("doctorPhoneLabel")+safeText(d.phone);
+
+  const days=document.createElement("p");
+  days.textContent=tr("daysLabel")+safeText(d.days);
+
+  const hours=document.createElement("p");
+  hours.textContent=tr("hoursLabel")+safeText(d.hours);
+
+  const del=document.createElement("button");
+  del.textContent=tr("delete");
+
+  del.addEventListener("click",async()=>{
+   if(!isAdmin||!confirm(tr("doctorDeleteConfirm")))return;
+
+   del.disabled=true;
+
+   try{
+    await deleteDoc(doc(db,"doctors",d.id));
+    showText("doctorListMessage",tr("doctorDeleted"));
+    await loadDoctors();
+    await loadPublicDoctors();
+   }catch(error){
+    showText("doctorListMessage",tr("deleteError")+error.message);
+    del.disabled=false;
+   }
+  });
+
+  box.append(title,specialty,phone,days,hours,del);
+  container.appendChild(box);
+ });
+}
+
+$("loadDoctors").addEventListener("click",loadDoctors);
+
+// Logout
 $("logoutButton").addEventListener("click",async()=>{
  try{
   await signOut(auth);
-  message("loginStatus","Logged out successfully.");
- }catch(err){
-  alert(err.message);
+  showText("loginMessage",tr("loggedOut"));
+  $("loginForm").reset();
+  location.hash="#home";
+ }catch(error){
+  showText("adminMessage",error.message);
  }
 });
+
+// Load public doctors even when nobody is logged in
+loadPublicDoctors();
 </script>
 
 </body>
